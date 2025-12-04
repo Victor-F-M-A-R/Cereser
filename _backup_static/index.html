@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Casa Cereser - Vinhos e Champagnes Italianos. Elegância sem esforço.">
+    <title>Casa Cereser | Fluid Quiet Luxury</title>
+
+    <!-- Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Defer JS -->
+    <script src="js/app.js" defer type="module"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header glass">
+        <div class="container header-inner">
+            <div class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <a href="/" class="logo">Casa Cereser</a>
+
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="#vinhos" class="nav-link">Vinhos</a></li>
+                    <li><a href="#champagnes" class="nav-link">Champagnes</a></li>
+                    <li><a href="#historia" class="nav-link">Nossa História</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-cart" aria-label="Carrinho">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path
+                            d="M6 2L3 6V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H19C19.5304 22 20.0391 21.7893 20.4142 21.4142C20.7893 21.0391 21 20.5304 21 20V6L18 2H6Z"
+                            stroke="#2C0404" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3 6H21" stroke="#2C0404" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M16 10C16 11.0609 15.5786 12.0783 14.8284 12.8284C14.0783 13.5786 13.0609 14 12 14C10.9391 14 9.92172 13.5786 9.17157 12.8284C8.42143 12.0783 8 11.0609 8 10"
+                            stroke="#2C0404" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-media">
+                <picture>
+                    <source media="(min-width: 768px)" srcset="assets/images/hero/hero-desktop.svg"
+                        type="image/svg+xml">
+                    <img src="assets/images/hero/hero-mobile.svg" alt="Vinho sendo servido em taça de cristal"
+                        loading="eager">
+                </picture>
+                <!-- Video placeholder for desktop (commented out until asset exists) -->
+                <!-- <video autoplay muted loop playsinline class="hero-video desktop-only">
+                    <source src="assets/video/hero-loop.webm" type="video/webm">
+                </video> -->
+            </div>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content reveal">
+                <h1 class="delay-100">A Arte do Vinho Italiano</h1>
+                <p class="delay-200" style="margin: 1.5rem 0; font-size: var(--text-lg);">Elegância, tradição e o
+                <ul style="margin-top: 1rem; opacity: 0.8;">
+                    <li>contato@casacereser.com.br</li>
+                    <li>+55 11 99999-9999</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Social</h4>
+                <ul style="margin-top: 1rem; opacity: 0.8;">
+                    <li>Instagram</li>
+                    <li>Facebook</li>
+                </ul>
+            </div>
+            </div>
+            </footer>
+
+            <!-- Cart Drawer -->
+            <div class="cart-overlay"></div>
+            <aside class="cart-drawer">
+                <div class="cart-header">
+                    <h3>Sua Adega</h3>
+                    <button class="close-cart" aria-label="Fechar carrinho">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 6L6 18M6 6l12 12" stroke="#2C0404" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="cart-items">
+                    <!-- Items will be injected here by JS -->
+                    <p style="text-align: center; margin-top: 2rem; color: var(--color-text-muted);">Sua cesta está
+                        vazia.</p>
+                </div>
+                <div class="cart-footer">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-weight: 600;">
+                        <span>Total</span>
+                        <span class="cart-total">R$ 0,00</span>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;">Finalizar Compra</button>
+                </div>
+            </aside>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+/* 
+ * Casa Cereser - Base Styles
+ * Design System: Fluid Quiet Luxury
+ */
+
+:root {
+    /* Palette */
+    --color-deep-bordeaux: #2C0404;
+    --color-obsidian: #1A1A1A;
+    --color-antique-gold: #D4AF37;
+    --color-warm-alabaster: #F9F7F2;
+    --color-text-main: #2C0404;
+    --color-text-muted: #665C5C;
+
+    /* Typography */
+    --font-display: 'Playfair Display', serif;
+    --font-interface: 'Inter', sans-serif;
+    
+    /* Fluid Typography */
+    --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
+    --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
+    --text-3xl: clamp(2rem, 1.8rem + 1vw, 2.5rem);
+    --text-4xl: clamp(2.5rem, 2.2rem + 1.5vw, 3.5rem);
+    --text-display: clamp(3rem, 2.5rem + 2.5vw, 5rem);
+
+    /* Spacing - Fluid */
+    --space-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+    --space-sm: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+    --space-md: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+    --space-lg: clamp(2.5rem, 2rem + 2.5vw, 4rem);
+    --space-xl: clamp(4rem, 3rem + 5vw, 8rem);
+
+    /* Animation Physics */
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+    
+    /* Grid */
+    --grid-columns: 4;
+    --grid-gap: 20px;
+    --container-padding: 20px;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --grid-columns: 8;
+        --container-padding: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --grid-columns: 12;
+        --container-padding: 5vw;
+    }
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-interface);
+    background-color: var(--color-warm-alabaster);
+    color: var(--color-text-main);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+img, picture, video {
+    max-width: 100%;
+    display: block;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* Utilities */
+.container {
+    width: 100%;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 2500px; /* Ultra-wide support */
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

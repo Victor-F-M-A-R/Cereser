@@ -1,0 +1,107 @@
+@import './styles/base.css';
+@import './styles/animations.css';
+@import './styles/layout.css';
+@import './styles/components.css';
+
+:root {
+  /* Reference Palette */
+  --color-bg-cream: #FDFBF7;
+  /* Lighter, warmer cream */
+  --color-bordeaux: #3E1E24;
+  /* Darker, more muted bordeaux */
+  --color-gold: #C5A065;
+  /* Muted gold */
+  --color-text-dark: #2A2A2A;
+  --color-text-light: #FDFBF7;
+
+  --font-display: 'Playfair Display', serif;
+  --font-interface: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--color-bg-cream);
+  color: var(--color-text-dark);
+}
+
+/* Override base styles to match reference */
+.btn-primary {
+  background-color: var(--color-bordeaux);
+  color: var(--color-text-light);
+  border-radius: 30px;
+  /* Pill shape */
+  padding: 0.8em 2em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  background-color: #5a2e36;
+  color: var(--color-text-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(62, 30, 36, 0.2);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-bordeaux);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-family: var(--font-interface);
+  font-size: 0.9rem;
+  color: #888;
+  text-align: center;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+/* --- REGRAS APENAS PARA CELULAR (MOBILE OPTIMIZATION) --- */
+@media (max-width: 768px) {
+
+    /* 1. REMOVER A FAIXA BRANCA DO TOPO (HEADER TRANSPARENTE) */
+    header.site-header, nav {
+        background-color: transparent !important; /* Remove fundo branco/sólido */
+        box-shadow: none !important; /* Remove sombra que cria linha */
+        position: absolute; /* Para ficar POR CIMA da imagem, não empurrando ela */
+        top: 0;
+        width: 100%;
+        z-index: 50;
+    }
+
+    /* 2. REMOVER NOME REDUNDANTE NO TOPO */
+    /* Oculta o 'CASA CERESER' do menu, mantendo apenas na Hero Image */
+    header .logo, 
+    header h1, 
+    nav a.brand {
+        display: none !important;
+    }
+
+    /* 3. AJUSTAR ÍCONES (Manter Acessíveis) */
+    /* Como tiramos o logo, vamos espalhar os ícones (Menu, Lupa, Cart) */
+    header .header-actions, nav .icons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between; /* Espalha para as bordas */
+        padding: 0 1rem;
+    }
+
+    /* 4. PREVENIR FAIXA BRANCA LATERAL (SCROLL HORIZONTAL) */
+    html, body {
+        overflow-x: hidden; /* Corta qualquer elemento que esteja vazando para a direita */
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* 5. AJUSTE DO TÍTULO HERO MOBILE */
+    #hero h1 {
+        font-size: 2.5rem !important; /* Menor para não quebrar */
+        line-height: 1.1;
+    }
+}
+
