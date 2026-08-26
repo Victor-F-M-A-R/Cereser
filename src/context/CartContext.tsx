@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { Product } from '@/data/products';
 
 interface CartItem extends Product {
@@ -22,15 +22,15 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: React.ReactNode }) {
     const [cart, setCart] = useState<CartItem[]>([]);
     const [isCartOpen, setIsCartOpen] = useState(false);
-    const [favorites, setFavorites] = useState<number[]>([]);
-
-    // Load from local storage
-    useEffect(() => {
-        const savedFavs = localStorage.getItem('casaCereser_favorites');
-        if (savedFavs) setFavorites(JSON.parse(savedFavs));
-
-        // Could also load cart if we wanted persistence
-    }, []);
+    const [favorites, setFavorites] = useState<number[]>(() => {
+        if (typeof window === 'undefined') return [];
+        try {
+            const savedFavs = localStorage.getItem('casaCereser_favorites');
+            return savedFavs ? JSON.parse(savedFavs) : [];
+        } catch {
+            return [];
+        }
+    });
 
     const addToCart = (product: Product) => {
         setCart(prev => {
