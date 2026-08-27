@@ -24,6 +24,7 @@ export default function ProductCard({ product, delay }: { product: Product; dela
             {/* Heart Top Right */}
             <button
                 onClick={() => toggleFavorite(product.id)}
+                aria-label={isFav ? `Remover ${product.name} dos favoritos` : `Adicionar ${product.name} aos favoritos`}
                 style={{
                     position: 'absolute',
                     top: '1rem',
